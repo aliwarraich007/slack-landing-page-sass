@@ -1,0 +1,22 @@
+@import "placeholders";
+
+* {
+  @extend %preventDefault;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  @extend %preventDefault;
+}
+
+li {
+  list-style-type: none;
+  @extend %preventDefault;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}

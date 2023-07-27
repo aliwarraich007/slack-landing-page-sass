@@ -1,0 +1,55 @@
+@import "breakpoints";
+@import "colors";
+@import "mixins";
+@import "placeholders";
+
+#landing {
+  background-color: $purple;
+  @extend %flex-row;
+  @extend %section-settings;
+  h1 {
+    color: $white;
+    font-size: 4rem;
+    font-weight: bolder;
+    text-align: left;
+  }
+  h2 {
+    color: $yellow;
+    font-size: 3em;
+    font-weight: bold;
+    max-width: min-content;
+    text-align: left;
+  }
+  p {
+    color: $white;
+  }
+  .hero-vid {
+    max-width: 100%;
+  }
+  @include respond-to($md) {
+    padding: 1.2rem;
+    #hidden {
+      display: none;
+    }
+  }
+}
+.child-row {
+  @extend %child-row;
+}
+.btn-ctn {
+  @extend %btn-container;
+  width: 100%;
+}
+
+.margin-v {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.margin-h {
+  @include respond-to($md) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  margin-left: 2rem;
+  margin-right: 2rem;
+}

@@ -1,0 +1,19 @@
+@import "colors";
+@import "mixins";
+@import "placeholders";
+
+#end {
+  background-color: $purple;
+  clip-path: ellipse(105% 100% at center top);
+  @extend %section-settings;
+  @extend %centerFlexCol;
+  h1 {
+    font-size: xx-large;
+    color: $white;
+  }
+  #col-btn {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+}

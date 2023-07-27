@@ -1,0 +1,35 @@
+@import "colors";
+@import "mixins";
+@import "placeholders";
+footer {
+  @extend %section-settings;
+  @extend %centerFlexCol;
+  .list-grid {
+    width: 100%;
+    @include makeGrid(150px, 1fr);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    @include respond-to($sm) {
+      flex-direction: column;
+    }
+    ul {
+      width: 100%;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 2rem;
+        h1 {
+          font-size: small;
+        }
+        font-size: small;
+        &:hover {
+          color: $purple;
+          transition: 0.3s ease-in-out;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

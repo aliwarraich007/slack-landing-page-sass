@@ -1,0 +1,92 @@
+@import "mixins";
+@import "breakpoints";
+@import "colors";
+%preventDefault {
+  margin: 0;
+  padding: 0;
+}
+
+%section-settings {
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  @include respond-to($md) {
+    padding-left: 1.2rem;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    padding-right: 1.2rem;
+  }
+}
+
+%centerFlexRow {
+  display: flex;
+  align-items: center;
+}
+
+%centerFlexCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+%btnCommon {
+  border-radius: 0.2rem;
+  cursor: pointer;
+  padding: 1em;
+  width: auto;
+  font-weight: bold;
+  &:hover {
+    transform: scale(95%);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+%flex-row {
+  @extend %centerFlexRow;
+  justify-content: center;
+  width: 100%;
+  @include respond-to($md) {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+%child-row {
+  width: 50%;
+  @include respond-to($md) {
+    width: 100%;
+  }
+}
+
+%btn-container {
+  display: flex;
+  flex-direction: row;
+  @include respond-to($md) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+%animated-link {
+  color: $blue;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $blue;
+    transform-origin: bottom left;
+    transition: 0.3s ease-out;
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}

@@ -1,0 +1,63 @@
+@import "colors";
+@import "placeholders";
+@import "mixins";
+@import "breakpoints";
+header {
+  @extend %centerFlexRow;
+  background-color: $purple;
+  color: $white;
+  width: 100%;
+  justify-content: space-evenly;
+  @include respond-to($lg) {
+    justify-content: space-between;
+  }
+  font-size: x-large;
+  padding: 1% 4%;
+  #logo {
+    display: inline;
+    max-width: fit-content;
+  }
+  nav {
+    width: 50%;
+    @include respond-to($lg) {
+      display: none;
+    }
+    ul {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      @include respond-to($lg) {
+        &:first-child {
+          display: none;
+        }
+      }
+    }
+  }
+  .extra {
+    @extend %centerFlexRow;
+    width: 30%;
+    justify-content: space-evenly;
+  }
+  a {
+    color: $white;
+    font-size: small;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  #mobile {
+    display: none;
+    @include respond-to($lg) {
+      display: block;
+    }
+  }
+}
+
+@include respond-to($lg) {
+  .extra {
+    #side {
+      display: none;
+    }
+  }
+}

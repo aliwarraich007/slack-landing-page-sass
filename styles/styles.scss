@@ -1,0 +1,19 @@
+@import "root";
+@import "nav";
+@import "buttons";
+@import "heroSection";
+@import "features";
+@import "stories";
+@import "qoute";
+@import "dive";
+@import "end";
+@import "footer";
+.standlone-p {
+  width: 100%;
+  text-align: center;
+  p {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: small;
+  }
+}

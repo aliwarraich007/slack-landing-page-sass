@@ -1,0 +1,15 @@
+@mixin respond-to($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin makeGrid($px, $fr: 1fr) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($px, $fr));
+}
+
+@mixin btnColor($color, $txt) {
+  background-color: $color;
+  color: $txt;
+}

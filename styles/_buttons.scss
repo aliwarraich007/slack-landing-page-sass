@@ -1,0 +1,61 @@
+@import "colors";
+@import "placeholders";
+@import "mixins";
+.btn-hollow {
+  @extend %btnCommon;
+  border: 1px solid $white;
+  @include btnColor(transparent, $white);
+}
+
+.btn-fill {
+  @extend %btnCommon;
+  @include btnColor($white, $purple);
+  border: none;
+}
+
+.btn-hollow-invert {
+  @extend %btnCommon;
+  border: 1px solid $purple;
+  @include btnColor(transparent, $purple);
+}
+.btn-fill-invert {
+  @extend %btnCommon;
+  @include btnColor($purple, $white);
+  border: none;
+}
+
+.btn-google {
+  border: none;
+  background-color: $blue;
+  color: $white;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 0.2rem;
+  &:hover {
+    transform: scale(95%);
+    transition: 0.3s ease-in-out;
+  }
+  cursor: pointer;
+  .btn-text {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.btn-icon {
+  padding: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  padding: 1rem;
+  height: 100%;
+  border-radius: 0.2rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-container-flex {
+  @extend %btn-container;
+}

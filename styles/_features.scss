@@ -1,0 +1,52 @@
+@import "colors";
+@import "mixins";
+@import "placeholders";
+
+#feature {
+  background-color: $beige;
+  width: 100%;
+  text-align: center;
+  @extend %section-settings;
+  @extend %centerFlexCol;
+  .grid {
+    width: 70%;
+    @include respond-to($md) {
+      width: 100%;
+    }
+    ul {
+      @include makeGrid(150px);
+      margin-top: 2rem;
+      li {
+        padding: 1rem;
+      }
+    }
+  }
+  @include respond-to($md) {
+    padding: 1.2rem;
+  }
+  .container-row {
+    margin-top: 2rem;
+    @extend %flex-row;
+    text-align: left;
+    h1 {
+      font-size: xx-large;
+      margin-bottom: 1rem;
+      border-bottom: 0;
+    }
+    a {
+      @extend %animated-link;
+    }
+  }
+}
+
+.body-vid {
+  max-width: 100%;
+}
+.txt-container {
+  padding-left: 6rem;
+  padding-right: 6rem;
+  @include respond-to($md) {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+  }
+}

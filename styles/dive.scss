@@ -1,0 +1,46 @@
+@import "colors";
+@import "mixins";
+@import "placeholders";
+
+#dive {
+  @extend %section-settings;
+  background-color: $beige;
+  h1 {
+    margin-bottom: 2rem;
+  }
+  ul {
+    @include makeGrid(240px, 1fr);
+    gap: 2rem;
+
+    span {
+      font-size: small;
+      color: grey;
+    }
+
+    li {
+      background-color: $white;
+      box-shadow: 0px 0px 14.8px rgba(0, 0, 0, 0.03),
+        0px 0px 118px rgba(0, 0, 0, 0.06);
+      padding: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      border-radius: 1rem;
+      &:hover {
+        transform: scale(110%);
+        @include respond-to($md) {
+          transform: none;
+        }
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+    a {
+      @extend %animated-link;
+    }
+  }
+
+  img {
+    width: 100%;
+    border-radius: 0.75rem;
+  }
+}
